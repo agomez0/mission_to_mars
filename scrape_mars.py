@@ -97,17 +97,20 @@ def scrape():
         
         #Assign tweet info to variable
         mars_weather = tweet.text
+        if "pic.twitter" in mars_weather:
+            mars_weather = mars_weather.split('pic.twitter')[0]
+        else:
+            pass
         
         # If tweet contains words sol and pressure, print the tweet
         if "sol" and "pressure" in mars_weather:
             print(mars_weather)
+
+            #Add items into the mars_data dictionary
+            mars_data['mars_weather'] = mars_weather
             break
         else:
             pass
-
-    #Add items into the mars_data dictionary
-    mars_data['mars_weather'] = mars_weather
-
 
 
     # MARS HEMISPHERES
