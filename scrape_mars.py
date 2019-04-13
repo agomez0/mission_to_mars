@@ -199,8 +199,6 @@ def scrape():
     #Add item to mars_data dictionary
     mars_data['html_table'] = html_table
 
-    #df.to_html('index.html')
-
     browser.quit()
 
     return mars_data
